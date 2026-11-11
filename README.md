@@ -86,3 +86,9 @@ Do not tune repeatedly against the final test set. Record dataset source/version
 - Calibrate probabilities and select thresholds with domain stakeholders and documented cost assumptions.
 - Production use requires secure data handling, access controls, monitoring, drift detection, auditability, human review, incident response and applicable legal/regulatory review.
 - Never publish sensitive transaction data, credentials or payment details.
+
+## Author
+
+**Mohamed Riyaz S.**  
+Integrated M.Tech, Computer Science and Engineering (Business Analytics)  
+VIT Chennai
