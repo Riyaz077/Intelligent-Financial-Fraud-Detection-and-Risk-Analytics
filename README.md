@@ -1,4 +1,6 @@
-# Intelligent Financial Fraud Detection and Risk Analytics
+# FinGuard-Analytics
+
+## Intelligent Financial Fraud Detection and Risk Analytics
 
 An end-to-end FinTech machine-learning starter project for detecting potentially fraudulent transactions, analyzing financial risk patterns, handling severe class imbalance, comparing classification models, and exploring transaction-level risk scores in an interactive Streamlit dashboard.
 
