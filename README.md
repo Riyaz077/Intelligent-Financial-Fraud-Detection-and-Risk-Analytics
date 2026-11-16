@@ -54,40 +54,43 @@ The commonly used European card dataset contains anonymized PCA-derived features
 └── README.md
 ```
 
-## Installation
-Python 3.10–3.12 recommended.
-```bash
-python -m venv .venv
-# Windows PowerShell:
-.venv\\Scripts\\Activate.ps1
-# macOS/Linux:
-source .venv/bin/activate
-pip install -r requirements.txt
-```
+## **Installation & Setup**
 
-## Run the dashboard
-```bash
-streamlit run dashboard/app.py
-```
-Upload a CSV, select the fraud target column, train models, compare metrics and inspect demonstration risk scores.
+- Ensure Python 3.10–3.12 is installed.
+- Create and activate a Python virtual environment.
+- Install the required dependencies using `requirements.txt`.
+- Launch the interactive Streamlit dashboard.
+- Upload a transaction dataset in CSV format and select the fraud target column.
+- Train machine-learning models and compare their evaluation metrics.
+- Explore fraud detection results and demonstration risk scores.
 
-## Train from command line
-```bash
-python -m src.train --csv data/raw/creditcard.csv --target Class --output models/fraud_model.joblib
-```
+## **Command-Line Model Training**
+
+- Execute the training module with the required dataset path.
+- Specify the target column (`Class`) for fraud classification.
+- Save the trained model artifact in `models/fraud_model.joblib`.
+- Use the saved model for subsequent fraud prediction and evaluation.
 
 ## Evaluation guidance
 Fraud datasets are often highly imbalanced. Accuracy can be misleading: a model that predicts every transaction as legitimate may achieve high accuracy while detecting no fraud. Prioritize PR-AUC / average precision, recall, precision, F1, confusion matrix, and business costs at an explicitly selected threshold. Use temporal splits when transaction timestamps are available; random splits can overstate performance when data is time-dependent.
 
 Do not tune repeatedly against the final test set. Record dataset source/version, target definition, split strategy, random seed, threshold and package versions.
 
-## Responsible use and limitations
-- A model score is a prioritization signal, not proof of fraud.
-- False positives can inconvenience or unfairly exclude legitimate customers; false negatives can cause financial loss.
-- Evaluate performance across relevant customer and transaction segments where legally and ethically appropriate.
-- Calibrate probabilities and select thresholds with domain stakeholders and documented cost assumptions.
-- Production use requires secure data handling, access controls, monitoring, drift detection, auditability, human review, incident response and applicable legal/regulatory review.
-- Never publish sensitive transaction data, credentials or payment details.
+## **Limitations**
+
+- Model predictions are indicative risk scores, not definitive evidence of fraudulent activity.
+- False positives may affect legitimate customers, while false negatives may result in financial losses.
+- Model performance may vary across different customer and transaction segments.
+- Probability calibration and decision thresholds require domain-specific validation.
+- The prototype may not meet all requirements for real-world financial deployment.
+
+## **Responsible Use**
+
+- Use this project for educational, research, and fraud analytics purposes.
+- Protect sensitive transaction information and never expose payment credentials or personal data.
+- Evaluate model fairness and performance across relevant transaction segments.
+- Maintain human oversight before taking action based on fraud predictions.
+- Ensure secure data handling, continuous monitoring, auditability, and regulatory compliance before production deployment.
 
 ## Author
 
